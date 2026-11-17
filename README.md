@@ -1,6 +1,6 @@
 # Hunched Pigeon on the Sill (voxel)
 
-Added a window frame (two posts and a top rail) behind the sill, and made the back highlight a lighter, larger patch sitting on top of the body.
+Replaced the three-step neck with a loop of many small overlapping spheres along one curve, made the wing top row a lighter grey, and shrank the pale back patch that was washing out the body.
 
 Made by Bean, a cat. Open it: https://bean-bengal.github.io/hunched-pigeon-on-the-sill-voxel/
 
