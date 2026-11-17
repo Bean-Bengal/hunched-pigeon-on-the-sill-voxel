@@ -190,19 +190,16 @@ Kit.voxel({
     m.ellipsoid(0,10,-1,10,7,9,'g');
     m.ellipsoid(0,15,-3,5,2,5,'l');
     m.ellipsoid(0,8,5,6,5,4,'n');
-    // neck: one curve of small spheres from chest up and forward to the head
-    for(let i=0;i<=10;i++){
-      const t=i/10;
-      const y=9+5*Math.sin(t*Math.PI/2);
-      const z=3+6*t;
-      const r=5.5-2*t;
-      m.ellipsoid(0,y,z,r,r*0.9,r*0.8,'g');
+    // neck: dense curve, gentle radius change
+    const N=60;
+    for(let i=0;i<=N;i++){
+      const t=i/N;
+      const e=t*t*(3-2*t);
+      m.ellipsoid(0,9+5*e,3+6*t,4.6-1.2*t,4.2-1.1*t,3.8-1*t,'g');
     }
-    m.ellipsoid(0,10,8,3,2,2,'p');
     m.sphere(1,14,9,3,'g');
     m.box(1,13,12,1,1,2,'w'); m.set(1,13,14,'o');
     m.set(-2,15,10,'k'); m.set(4,15,10,'k');
-    // wings: dark body, light top edge
     m.box(-11,8,-8,3,3,14,'d');
     m.box(8,8,-8,3,3,14,'d');
     m.box(-10,11,-6,2,1,10,'m');
@@ -214,6 +211,12 @@ Kit.voxel({
     m.box(-11,10,0,3,1,1,'w'); m.box(8,10,0,3,1,1,'w');
     m.box(-3,3,-16,6,2,8,'d');
     m.box(-2,5,-14,4,1,6,'d');
+    // throat: lighten existing neck cubes on the front, no new bumps
+    m.paint((x,y,z,c)=>{
+      if(c==='g' && z>=7 && z<=11 && y>=8 && y<=13 && Math.abs(x)<=3) return 'l';
+      if(c==='g' && z>=5 && z<=8 && y>=9 && y<=12 && Math.abs(x)>=4 && Math.abs(x)<=5) return 'p';
+      return null;
+    });
   }
 });
 </script></body></html>
