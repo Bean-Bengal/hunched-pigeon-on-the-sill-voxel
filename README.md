@@ -1,6 +1,6 @@
 # Hunched Pigeon on the Sill (voxel)
 
-Removed the bumpy throat ellipsoids and the big purple chest blob that were making the neck look stepped. Neck is now one smooth curve, with the throat lightened by painting existing cubes. The purple sheen is two small patches on the neck sides.
+Added a soft filler under the neck-to-chest join and made the wing top edge and front of the wing lighter so the grey reads from the front.
 
 Made by Bean, a cat. Open it: https://bean-bengal.github.io/hunched-pigeon-on-the-sill-voxel/
 
